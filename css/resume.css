@@ -1,27 +1,25 @@
-/* Global Layout */
+/* =========================
+   Default: LIGHT THEME
+   ========================= */
 html, body {
   height: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
   font-family: 'Times New Roman', serif;
-  background-color: #111;
-  color: #eee;
+  background-color: #F5EBD0;
+  color: whitesmoke;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.bgr{
-  background-image: url('../assets/rs.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+
 .page-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(#F5EBD0, #7F011F, #7F011F);
 }
 
 main {
@@ -34,7 +32,8 @@ main {
   justify-content: space-between;
   align-items: center;
   flex-direction: row-reverse;
-  background: rgba(0, 0, 0, 0.9);
+  background: #F5EBD0;
+  color: #7F011F;
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
@@ -46,16 +45,17 @@ main {
   font-family: 'Poppins', sans-serif;
   font-size: 2rem;
   font-weight: bold;
-  color: #00bcd4;
+  color: #7F011F;
 }
 
 .nav-toggle {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: white;
+  color: #7F011F;
 }
 
+/* Nav Links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -66,7 +66,7 @@ main {
 }
 
 .nav-links li a {
-  color: white;
+  color: #7F011F;
   text-decoration: none;
   font-weight: bold;
   padding: 0.5rem;
@@ -74,7 +74,7 @@ main {
 
 .nav-links a.active,
 .nav-links a:hover {
-  color: #00bcd4;
+  color: crimson;
 }
 
 /* Resume Section */
@@ -82,34 +82,66 @@ main {
   max-width: 800px;
   margin: 2rem auto;
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.7);
+  background: #f5ebd0e1;
   border-radius: 10px;
   line-height: 1.7;
+  box-shadow: 0 4px 12px crimson;
+  color: #7F011F;
 }
 
 .resume-section h2 {
-  border-bottom: 1px solid #00bcd4;
+  border-bottom: 1px solid #7F011F;
   padding-bottom: 0.3rem;
   margin-top: 2rem;
+  color: #7F011F;
 }
 
-/* Footer (optional) */
+/* Footer */
 .footer {
-  background: rgba(0, 0, 0, 0.85);
-  color: #ccc;
+  background: #F5EBD0;
+  color: #333;
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
   margin-top: auto;
+  border-top: 1px solid #ddd;
 }
 
 .footer a {
-  color: #00bcd4;
+  color: #7F011F;
   text-decoration: none;
 }
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.social-icons a {
+  background: #7F011F;
+  color: #F5EBD0;
+  font-size: 1.3rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #F5EBD0;
+  color: #7F011F;
 }
 
 /* Responsive */
@@ -145,29 +177,74 @@ main {
   }
 }
 
-.social-icons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
-}
+/* =========================
+   Dark Theme Override
+   ========================= */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #111;
+    color: #eee;
+  }
 
-.social-icons a {
-  background: #00bcd4;
-  color: #111;
-  font-size: 1.3rem;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  .page-wrapper {
+  flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
+  flex-direction: column;
+  background: linear-gradient(#080101, #00bcd4, #00bcd4);
+  }
 
-.social-icons a:hover {
-  background: #080101;
+  .logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
   color: #00bcd4;
+}
+  .navbar {
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid #00bcd4;
+  }
+
+  .nav-toggle {
+    color: white;
+  }
+
+  .nav-links li a {
+    color: white;
+  }
+
+  .nav-links a.active,
+  .nav-links a:hover {
+    color: #00bcd4;
+  }
+
+  .resume-section {
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: none;
+    color: #eee;
+  }
+
+  .resume-section h2 {
+    border-bottom: 1px solid #00bcd4;
+    color: #eee;
+  }
+
+  .footer {
+    background: #080101;
+    color: #ccc;
+    border-top: 1px solid #ddd;
+  }
+
+  .footer a {
+    color: #00bcd4;
+  }
+
+  .social-icons a {
+    background: #00bcd4;
+    color: #111;
+  }
+
+  .social-icons a:hover {
+    background: #080101;
+    color: #00bcd4;
+  }
 }
